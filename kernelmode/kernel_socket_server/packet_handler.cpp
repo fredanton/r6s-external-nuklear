@@ -209,7 +209,7 @@ static uint64_t clean_unloaded_drivers() {
 
 static uint64_t spoof_drives()
 {
-	log("Not implemented!");
+	log("Do your own drive spoofing, I'm not giving everything!");
 
 	return 1;
 }

@@ -5,8 +5,6 @@
 #include "driver.h"
 #include <vector>
 
-
-
 namespace manager {
 	static uint32_t m_pid;
 	static uintptr_t m_base;

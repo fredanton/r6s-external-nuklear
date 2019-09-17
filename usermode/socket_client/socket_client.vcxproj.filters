@@ -50,10 +50,10 @@
     <ClInclude Include="offsets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="r6manager.h">
+    <ClInclude Include="vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector.h">
+    <ClInclude Include="manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

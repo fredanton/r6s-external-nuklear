@@ -15,7 +15,7 @@
 #define WINDOW_HEIGHT 400
 
 #include "nuklear/nuklear_d3d11.h"
-#include "r6manager.h"
+#include "manager.h"
 
 static IDXGISwapChain * swap_chain;
 static ID3D11Device* device;
@@ -113,18 +113,18 @@ int main()
 {
 	driver::initialize();
 
-	r6manager::m_connection = (SOCKET)driver::connect;
-	if (r6manager::m_connection == INVALID_SOCKET)
+	manager::m_connection = (SOCKET)driver::connect;
+	if (manager::m_connection == INVALID_SOCKET)
 	{
 		std::cout << "Connection failed.\n";
 		return -1;
 	}
 
-	driver::clean_piddbcachetable(r6manager::m_connection);
-	driver::clean_mmunloadeddrivers(r6manager::m_connection);
+	driver::clean_piddbcachetable(manager::m_connection);
+	driver::clean_mmunloadeddrivers(manager::m_connection);
 
-	r6manager::m_pid = find_process_by_id("notepad.exe");
-	r6manager::m_base = driver::get_process_base_address(r6manager::m_connection, r6manager::m_pid);
+	manager::m_pid = find_process_by_id("notepad.exe");
+	manager::m_base = driver::get_process_base_address(manager::m_connection, manager::m_pid);
 
 	struct nk_context* ctx;
 	struct nk_colorf bg;
@@ -259,7 +259,7 @@ int main()
 	swap_chain->Release();
 	UnregisterClassW(wc.lpszClassName, wc.hInstance);
 
-	driver::disconnect(r6manager::m_connection);
+	driver::disconnect(manager::m_connection);
 	driver::deinitialize();
 
 	return 0;

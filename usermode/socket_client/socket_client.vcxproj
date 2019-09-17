@@ -135,7 +135,7 @@
     <ClInclude Include="nuklear\nuklear_d3d11_pixel_shader.h" />
     <ClInclude Include="nuklear\nuklear_d3d11_vertex_shader.h" />
     <ClInclude Include="vector.h" />
-    <ClInclude Include="r6manager.h" />
+    <ClInclude Include="manager.h" />
     <ClInclude Include="offsets.h" />
     <ClInclude Include="server_shared.h" />
   </ItemGroup>
